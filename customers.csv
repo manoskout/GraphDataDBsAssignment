@@ -1,0 +1,8 @@
+CustomerID,FullName,Address,City,PostalCode,Phone,Email
+manosk,Manos Koutoulakis,Methodiou 10,Heraklion,12345,1111111,test1@example.com
+panosmark,Panos Markou,St. Nikolaou 5,Lasithi,74124,2222222,test2@example.com
+jiannis1976,Jiannis Manou,Fanouriou 37,Heraklion,56823,3333333,test3@example.com
+afroditiper,Afroditi Psarou,Georgiou El. 10,Chania,69004,4444444,test4@example.com
+fanispapanikolaou,Fanis Papanikolaou,Plastira 12,Archanes,98735,5555555,test5@example.com
+marilenat,Marilena Ataniou,N. Paulou 1,Athens,12777,6666666,test6@example.com
+jennychar,Jenny Charalampidou,Eleutheriou 166,Patra,12104,7777777,test7@example.com

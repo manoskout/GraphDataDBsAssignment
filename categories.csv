@@ -1,0 +1,8 @@
+CategoryID,CategoryName,Description
+1,HardDrives,"Internal Hard Drives, External Hard Drives"
+2,CPU,"Intel, AMD"
+3,GPU,"AMD,NVIDIA"
+4,Peripherals,"Mouse,Keyboard,Web Cameras,USB Hub"
+5,Electronics,"Arduino, Raspberry, FPGA, Breadboards, Sensors, etc."
+6,Laptops,"High-end, middle-range, and refurbished"
+7,Smartphones,A wide range of smartphones
