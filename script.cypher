@@ -11,7 +11,7 @@ MERGE (order:Order {orderID: row.OrderID})
 		order.shipPostalCode= row.ShipPostalCode,
 		order.productID= row.ProductID,
 		order.quantity= row.Quantity,
-		order.discount= row.Discountl;
+		order.discount= row.Discount;
  
 // Create products
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/manoskout/GraphDataDBsAssignment/main/products.csv' AS row
@@ -53,15 +53,15 @@ MERGE (customer:Customer {customerID: row.CustomerID})
 // We will create indexes for any nodes according to their unique value (in our occasion we use their IDs)
 // This process is important to ensure the lookup of nodes is optimized
 // Creation of constraints
-//CREATE INDEX product_id FOR (p:Product) ON (p.productID);
-//CREATE INDEX product_name FOR (p:Product) ON (p.productName);
-//CREATE INDEX supplier_id FOR (s:Supplier) ON (s.supplierID);
-//CREATE INDEX customer_id FOR (c:Customer) ON (c.customerID);
-//CREATE INDEX category_id FOR (ca:Category) ON (ca.categoryID);
+CREATE INDEX product_id FOR (p:Product) ON (p.productID);
+CREATE INDEX product_name FOR (p:Product) ON (p.productName);
+CREATE INDEX supplier_id FOR (s:Supplier) ON (s.supplierID);
+CREATE INDEX customer_id FOR (c:Customer) ON (c.customerID);
+CREATE INDEX category_id FOR (ca:Category) ON (ca.categoryID);
 // We disallow orders with the same id from getting created using UNIQUE command
-//CREATE CONSTRAINT order_id ON (o:Order) ASSERT o.orderID IS UNIQUE;
+CREATE CONSTRAINT order_id ON (o:Order) ASSERT o.orderID IS UNIQUE;
 // The index insertion happens asychronously, thus the next command is used to block until they are populated
-//CALL db.awaitIndexes(); 
+CALL db.awaitIndexes(); 
 
 // Create relationships between orders and products
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/manoskout/GraphDataDBsAssignment/main/orders.csv' AS row
