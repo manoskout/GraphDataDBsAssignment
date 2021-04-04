@@ -30,7 +30,7 @@ Using cypher-shell (terminal):
 
 `cat script.cypher| cypher-shell -u <username> -p <password>`
 
-Or run script.cypher on neo4j Desktop app. (recommened)
+Or run `script.cypher` on neo4j Desktop app. (recommened)
 
 
 # Examples
@@ -41,9 +41,13 @@ You can trigger the script below only when you have successfully implemented the
 
 	`MATCH (o:Order) return count(o)`
 
+<img src="img/1_out.png">
+
 2. Get the total ammount of orders from a specific Customer:
 
 	`MATCH (c:Customer)-[:MADE]->(o:Order) WHERE c.fullName="Panos Markou" RETURN count(o)`
+
+<img src="img/2_out.png">
 
 3. Create a new user named George Michael:
 
@@ -54,8 +58,9 @@ You can trigger the script below only when you have successfully implemented the
     email: "asdqwe@test.com",
     fullName: "George Michael",
     phone: "12341234",
-    postalCode: "19482"
-})`
+    postalCode: "19482" })`
+
+<img src="img/3_out.png">
 
 4. Create yet another order na make the relationship with the user:
 
@@ -73,16 +78,15 @@ You can trigger the script below only when you have successfully implemented the
 	customerID: c.customerID,
 	shippedDate: "2021-07-22",
 	orderDate: "2021-07-02"})<-[:MADE]-(c)`
+<img src="img/4_out.png">
 
 5. Create relationship between a specific Order (orderId=55) and specific product (productID=23)
 
-	`MATCH 
-	(o:Order),
-	(p:Product) 
-	WHERE o.orderID="55" AND p.productID="23"
-	CREATE (o)-[r:CONTAINS]->(p)
-	RETURN type(r)`
-
+	`MATCH (o:Order), (p:Product) 
+	WHERE o.orderID="55" AND o.productID=p.productID
+		CREATE (o)-[:CONTAINS]->(p) 
+	RETURN o`
+<img src="img/5_out.png">
 
 6. Change the type of the orderID (String to Integer)
 
@@ -90,20 +94,26 @@ You can trigger the script below only when you have successfully implemented the
 	WHERE toString(n.orderID) = n.orderID
 	SET n.orderID = toInteger(n.orderID)`
 
-7. Find the Customer with the least orders
+<img src="img/6_out.png">
+
+7. Find the Customer with up to 3 orders
 	
-	`MATCH (c:Customer), (o.Order)
-	WHERE o.customerID=c.customerID
-	RETURN count(o)
+	`MATCH (c:Customer)-[:MADE]->(o:Order)
+	WITH c, count(o) as cnt
+	RETURN c.fullName as CustomerName, cnt as SumOfOrders
+	WHERE cnt<3
 	`
 
-8. Delete all but one of the dublicated customers in our graph
+<img src="img/7_out.png">
+
+8. Delete all but one of the dublicated customers in our graph (i.e we have accidentaly created 2 more users with the same properties)
 	
 	`MATCH (c:Customer)
 WITH c.customerID AS c_id, COLLECT(c) AS customers
 WHERE SIZE(customers) > 1
 FOREACH (n IN TAIL(customers) | DETACH DELETE n);`
 
+<img src="img/8_out.png">
 
 ## Possible problems you could encounter
 
