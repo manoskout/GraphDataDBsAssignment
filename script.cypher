@@ -53,7 +53,6 @@ MERGE (customer:Customer {customerID: row.CustomerID})
 // We will create indexes for any nodes according to their unique value (in our occasion we use their IDs)
 // This process is important to ensure the lookup of nodes is optimized
 // Creation of constraints
-CREATE INDEX product_id FOR (p:Product) ON (p.productID);
 CREATE INDEX product_name FOR (p:Product) ON (p.productName);
 CREATE INDEX supplier_id FOR (s:Supplier) ON (s.supplierID);
 CREATE INDEX customer_id FOR (c:Customer) ON (c.customerID);
