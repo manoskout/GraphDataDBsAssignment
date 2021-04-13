@@ -118,13 +118,13 @@ FOREACH (n IN TAIL(customers) | DETACH DELETE n);`
 ### Homework
 
 1. Find the orders of "Manos Koutoulakis"
-2. Find customers who have ordered a product twice.
-3. In node Orders there are three dates properties (requiredDate, orderDate, shippedDate). These dates are string type, change the type of these values to DATE
-4. When you will have made this change, find the orders which have been ordered on date("08-07-2021").
+2. Find customers who have purchased a product twice.
+3. In node Orders there are three dates properties (requiredDate, orderDate, shippedDate). Those dates are string type, change the type of these values to DATE
+4. When you make this change, find the orders that have been placed on the date ("08-07-2021"). 
 5. Find the supplier with the most products in the Hardware category 
 6. There is a mistake in our graph, Apple Macbook Pro is in the smartphone category, move this product to the Laptops category
 7. Find the category with the most visits according to the ordered items 
-8. Find the percentage of the shipping method: ClickAway
+8. Find the percentage of orders with the shippingMethod: ClickAway 
 
 ## Possible problems you will encounter
 
