@@ -115,7 +115,18 @@ FOREACH (n IN TAIL(customers) | DETACH DELETE n);`
 
 <img src="img/8_out.png">
 
-## Possible problems you could encounter
+### Homework
+
+1. Find the orders of "Manos Koutoulakis"
+2. Find customers who have ordered a product twice.
+3. In node Orders there are three dates properties (requiredDate, orderDate, shippedDate). These dates are string type, change the type of these values to DATE
+4. When you will have made this change, find the orders which have been ordered on date("08-07-2021").
+5. Find the supplier with the most products in the Hardware category 
+6. There is a mistake in our graph, Apple Macbook Pro is in the smartphone category, move this product to the Laptops category
+7. Find the category with the most visits according to the ordered items 
+8. Find the percentage of the shipping method: ClickAway
+
+## Possible problems you will encounter
 
 In case that you have problems with the indexes that have not removed after a graph cleaning you sould use the following script:
 
@@ -131,7 +142,7 @@ ASSERT n.orderID IS UNIQUE`
 
 `DROP INDEX ON :Product(productName)` 
 
-Questions? [Please do not hesitate to ask me ( manoskoutoulak@gmai.com )]
+Questions? [Please do not hesitate to ask me any question you have ( manoskoutoulak@gmai.com )]
 
 
 
