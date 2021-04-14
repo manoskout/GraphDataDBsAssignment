@@ -51,14 +51,15 @@ You can trigger the script below only when you have successfully implemented the
 
 3. Create a new user named George Michael:
 
-	`CREATE (:Customer {
+	`CREATE (c:Customer {
     address:"Hellinic Street 24",
     city: "Athens",
     customerID: "geoM",
     email: "asdqwe@test.com",
     fullName: "George Michael",
     phone: "12341234",
-    postalCode: "19482" })`
+    postalCode: "19482" })
+    RETURN c`
 
 <img src="img/3_out.png">
 
@@ -106,7 +107,7 @@ You can trigger the script below only when you have successfully implemented the
 
 <img src="img/7_out.png">
 
-8. Delete all but one of the dublicated customers in our graph (i.e we have accidentaly created 2 more users with the same properties)
+8. Delete all but one of the dublicated customers in our graph (i.e we have accidentaly created 2 more users with the same properties). If you do not make any mistake above, the result will be "no changes"
 	
 	`MATCH (c:Customer)
 WITH c.customerID AS c_id, COLLECT(c) AS customers
@@ -169,13 +170,13 @@ In case that you have problems with the indexes that have not removed after a gr
 
 `DROP CONSTRAINT
 ON (n:Order)
-ASSERT n.orderID IS UNIQUE`
+ASSERT n.orderID IS UNIQUE;`
 
-`DROP INDEX ON :Customer(customerID)`
+`DROP INDEX ON :Customer(customerID);`
 
-`DROP INDEX ON :Category(categoryID)`
+`DROP INDEX ON :Category(categoryID);`
 
-`DROP INDEX ON :Supplier(supplierID)`
+`DROP INDEX ON :Supplier(supplierID);`
 
 `DROP INDEX ON :Product(productName)` 
 
