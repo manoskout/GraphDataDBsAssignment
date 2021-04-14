@@ -31,7 +31,7 @@ Using cypher-shell (terminal):
 `cat script.cypher| cypher-shell -u <username> -p <password>`
 
 Or run `script.cypher` on neo4j Desktop app. (recommened)
-Just copy and paster the scipt.cypher in the neo4j Browser.
+Just copy and paste the scipt.cypher in the neo4j Browser.
 
 
 # Examples
