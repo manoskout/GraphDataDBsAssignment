@@ -100,8 +100,8 @@ You can trigger the script below only when you have successfully implemented the
 	
 	`MATCH (c:Customer)-[:MADE]->(o:Order)
 	WITH c, count(o) as cnt
-	RETURN c.fullName as CustomerName, cnt as SumOfOrders
 	WHERE cnt<3
+	RETURN c.fullName as CustomerName, cnt as SumOfOrders
 	`
 
 <img src="img/7_out.png">
