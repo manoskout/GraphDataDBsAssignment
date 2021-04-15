@@ -138,7 +138,7 @@ We have a **"mini"** social net graph. You should design the graph according to 
 | georget       | George        | Testakis      | male          | Heraklion     | Greece        |
 
 2. Create the FRIENDSHIP of Manos and George, since date("02-05-2019")
-3. Create the nodes Message which are connected with the users (MessageOwner and MessageID are unique constraints)
+3. Create the nodes Message which are connected with the users (MessageID are unique constraint)
 
 | messageOwner  | messageID     | messageContent                                | date             | 
 | ------------- | ------------- | --------------------------------------------- | ---------------- | 
