@@ -143,8 +143,8 @@ We have a **"mini"** social net graph. You should design the graph according to 
 | messageOwner  | messageID     | messageContent                                | date             | 
 | ------------- | ------------- | --------------------------------------------- | ---------------- | 
 | manosk        | 1             | Please prepare the lab computers              | 03/03/2021 13:00 |
-| georget       | 1             | Any problems should be sent to me by email    | 03/03/2021 13:01 |
-| georget       | 2             | Students should use code 1234 to access neo4j | 03/03/2021 13:05 |
+| georget       | 2             | Any problems should be sent to me by email    | 03/03/2021 13:01 |
+| georget       | 3             | Students should use code 1234 to access neo4j | 03/03/2021 13:05 |
 
 4. Create the nodes Comments 
 
@@ -152,7 +152,7 @@ We have a **"mini"** social net graph. You should design the graph according to 
 | ------------- | ------------- | ------------- | ------------- | -------------------------------------------------------------------------------- | ---------------- |
 | georget       | 1             | 1             | manosk        | I have already installed neo4j on all computers.                                 | 03/03/2021 18:10 |
 | manosk        | 2             | 1             | manosk        | Fine, I hope everything goes well this semester.                                 | 03/03/2021 18:10 |
-| georget       | 1             | 2             | georget       | Update, password for login to Neo4j has changed. Use 4321 to access the database | 03/03/2021 18:10 |
+| georget       | 3             | 3             | georget       | Update, password for login to Neo4j has changed. Use 4321 to access the database | 03/03/2021 18:10 |
 
 5. Set likes as relationships between User and Message
 
