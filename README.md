@@ -160,7 +160,7 @@ We have a **"mini"** social net graph. You should design the graph according to 
 | ------------- | ------------- | ------------- |  
 | georget       | manosk        | 1             | 
 | manosk        | manosk        | 1             |  
-| georget       | manosk        | 2             |  
+| georget       | georget       | 2             |  
 
 
 
